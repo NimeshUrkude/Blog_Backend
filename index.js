@@ -6,7 +6,7 @@ app.use(express.json());
 import postRoutes from "./routes/routes.js";
 import cors from "cors";
 const corsOptions ={
-    origin:["https://nimeshurkude.github.io/Blog_Frontend/","https://nimeshurkude.github.io/Blog_Frontend","http://localhost:3000","http://localhost:3000/"],
+    origin:["https://nimeshurkude.github.io/Blog_Frontend/","https://nimeshurkude.github.io/Blog_Frontend","http://localhost:3000","http://localhost:3000/","https://nimeshurkude.github.io/","https://nimeshurkude.github.io"],
     credentials:true,            
 }
 app.use(cors(corsOptions));
