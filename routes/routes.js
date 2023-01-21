@@ -17,22 +17,27 @@ router.post("/add",function(req,res){
     });
 
     temp.save()
-    .then(function(){console.log("add");})
-    .catch(function(err){console.log(err);});
-
-    res.send("200");
+    .then(function(){
+        console.log("add");
+        res.status(200).send("All good");
+    })
+    .catch(function(err){
+        console.log(err);
+        res.status(404).send("Oh uh, something went wrong");
+    });
 });
 
 router.post("/del",function(req,res){
     Itdtdpn.findByIdAndDelete(req.body.delid,function(err,result){
         if(result){
             console.log("del");
+            res.status(200).send("All good");
         }
         else{
             console.log(err);
+            res.status(404).send("Oh uh, something went wrong");
         }
     });
-    res.send("200");
 })
 
 router.get("/cout",function(req,res){   
@@ -40,11 +45,17 @@ router.get("/cout",function(req,res){
         if(result){
             res.send(result);
             console.log("cout");
+            res.status(200).send("All good");
         }
         else{
             console.log(err);
+            res.status(404).send("Oh uh, something went wrong");
         }
     })
+});
+
+router.get("/",function(req,res){ 
+    res.send("<h1>Blog Backend</h1><a href=''>Go to Blog Frontend</a>")
 });
 
 export default router;
