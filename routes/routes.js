@@ -54,8 +54,6 @@ router.get("/cout",function(req,res){
     })
 });
 
-router.get("/",function(req,res){ 
-    res.send("<h1>Blog Backend</h1><a href=''>Go to Blog Frontend</a>")
+router.get("/",function(req,res){
+    res.send("<h1>Blog Backend</h1><a href='https://nimeshurkude.github.io/Blog_Frontend/'>Go to Blog Frontend</a>")
 });
-
-export default router;
