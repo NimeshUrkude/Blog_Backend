@@ -1,8 +1,6 @@
 import express from "express";
 const app = express();
 import mongoose from "mongoose";
-import * as dotenv from 'dotenv';
-dotenv.config()
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 import postRoutes from "./routes/routes.js";
