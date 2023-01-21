@@ -19,19 +19,27 @@ router.post("/add",function(req,res){
     temp.save()
     .then(function(){console.log("add");})
     .catch(function(err){console.log(err);});
-    console.log(req.body);
 });
 
 router.post("/del",function(req,res){
-    Itdtdpn.findByIdAndDelete(req.body.delit,function(err,result){});
-    console.log("del");
+    console.log(req.body);
+    Itdtdpn.findByIdAndDelete(req.body.delit,function(err,result){
+        if(result){
+            console.log("del");
+        }
+        else{
+            console.log(err);
+        }
+    });
 })
 
 router.get("/cout",function(req,res){   
     Itdtdpn.find(function(err,result){
         if(result){
             console.log("cout");
-            res.send(result);
+        }
+        else{
+            console.log(err);
         }
     })
 });
