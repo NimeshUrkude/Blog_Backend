@@ -24,8 +24,7 @@ router.post("/add",function(req,res){
 });
 
 router.post("/del",function(req,res){
-    console.log(req.body);
-    Itdtdpn.findByIdAndDelete(req.body.delit,function(err,result){
+    Itdtdpn.findByIdAndDelete(req.body.delid,function(err,result){
         if(result){
             console.log("del");
         }
