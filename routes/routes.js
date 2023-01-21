@@ -19,11 +19,11 @@ router.post("/add",function(req,res){
     temp.save()
     .then(function(){
         console.log("add");
-        res.status(200).send("All good");
+        res.status(200);
     })
     .catch(function(err){
+        res.status(501).send('Somthing is Wrong');
         console.log(err);
-        res.status(404).send("Oh uh, something went wrong");
     });
 });
 
@@ -31,11 +31,11 @@ router.post("/del",function(req,res){
     Itdtdpn.findByIdAndDelete(req.body.delid,function(err,result){
         if(result){
             console.log("del");
-            res.status(200).send("All good");
+            res.status(200);
         }
         else{
+            res.status(501).send('Somthing is Wrong');
             console.log(err);
-            res.status(404).send("Oh uh, something went wrong");
         }
     });
 })
@@ -43,19 +43,18 @@ router.post("/del",function(req,res){
 router.get("/cout",function(req,res){   
     Itdtdpn.find(function(err,result){
         if(result){
-            res.send(result);
+            res.status(200).send(result);
             console.log("cout");
-            res.status(200).send("All good");
         }
         else{
+            res.status(501).send('Somthing is Wrong');
             console.log(err);
-            res.status(404).send("Oh uh, something went wrong");
         }
     })
 });
 
 router.get("/",function(req,res){
-    res.send("<h1>Blog Backend</h1><a href='https://nimeshurkude.github.io/Blog_Frontend/'>Go to Blog Frontend</a>")
+    res.status(200).send("<h1>Blog Backend</h1><a href='https://nimeshurkude.github.io/Blog_Frontend/'>Go to Blog Frontend</a>")
 });
 
 export default router;
