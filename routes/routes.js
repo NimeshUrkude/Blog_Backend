@@ -23,8 +23,8 @@ router.post("/add",function(req,res){
 });
 
 router.post("/del",function(req,res){
-    console.log(res);
-    //Itdtdpn.findByIdAndDelete(req.body.delit,function(err,result){});
+    Itdtdpn.findByIdAndDelete(req.body.delit,function(err,result){});
+    console.log("del");
 })
 
 router.get("/cout",function(req,res){   
