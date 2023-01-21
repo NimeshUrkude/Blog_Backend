@@ -19,6 +19,8 @@ router.post("/add",function(req,res){
     temp.save()
     .then(function(){console.log("add");})
     .catch(function(err){console.log(err);});
+
+    res.send("200");
 });
 
 router.post("/del",function(req,res){
@@ -31,11 +33,13 @@ router.post("/del",function(req,res){
             console.log(err);
         }
     });
+    res.send("200");
 })
 
 router.get("/cout",function(req,res){   
     Itdtdpn.find(function(err,result){
         if(result){
+            res.send(result);
             console.log("cout");
         }
         else{
