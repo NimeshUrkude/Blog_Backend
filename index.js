@@ -5,10 +5,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 import postRoutes from "./routes/routes.js";
 import cors from "cors";
-const ori1=process.env.ORIGIN_ONE_KEY;
-const ori2=process.env.ORIGIN_ONE_KEY;
 const corsOptions ={
-    origin:[ori1 ,ori2],
+    origin:["https://nimeshurkude.github.io/Blog_Frontend/","https://nimeshurkude.github.io/Blog_Frontend","http://localhost:3000","http://localhost:3000/"],
     credentials:true,            
 }
 app.use(cors(corsOptions));
