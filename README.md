@@ -1,6 +1,6 @@
 # Blog Backend
 
-This Repository is of Backend Server for Blog Clone Website build on NodeJS. This Backend consist of Data input,Data Output,Data Update,Data Delete. Blog Backend is hosted on Render.
+This repository is the backend server for a blog clone website built on NodeJS. It is hosted on Render and consists of the full stack of operations required for a blog website. This includes data input, data output, data update and data delete. With this repository, users can easily create and manage their blog with ease and efficiency.
 
 Backend Link : https://blog-backend-wdev.onrender.com
 
